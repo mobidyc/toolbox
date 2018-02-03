@@ -69,7 +69,7 @@ if (isset($_GET["id"])){
                 placeholder: 'Add a label',
                 useTabKey: true,
                 selectionRenderer: function(data){
-                    return '<span class="label label-' + colors_available[hashCode(data.name) % colors_available.length] + '">' + data.name + '</span>';
+                    return '<span class="label btn-' + colors_available[hashCode(data.name) % colors_available.length] + '">' + data.name + '</span>';
                 }
             });
         });
