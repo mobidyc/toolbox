@@ -46,7 +46,7 @@ body {
 }
 
 .tagcloud { 
-  width:600px; text-align:center; padding:5px;
+  text-align:center; padding:5px;
   overflow:auto; font-family:arial;
 }
 .tagcloud h2 {
