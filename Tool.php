@@ -448,6 +448,44 @@ class Tool
     }
 
     /**
+     * @return { tags: [{tag: mytag, freq: mytag_frequency], min: minfreq, max: maxfreq }
+     */
+    public function list_label_freq() {
+        $all_labels = $this->list_labels();
+
+        //start json object
+        $json = "({ tags:[";
+        $jsonexpand = "";
+        $minfreq = 0;
+        $maxfreq = 0;
+
+        foreach($all_labels as $key => $val) {
+            $rel_tools = $this->getToolsByLabel($key);
+            $rel_count = count($rel_tools);
+            if($rel_count > 0 ) {
+                if($jsonexpand != "") {
+                    $jsonexpand .= ",";
+                }
+                $jsonexpand .= "{tag:'" . $key . "',freq:'" . $rel_count . "'}";
+
+                if($minfreq == 0)
+                    $minfreq = $rel_count;
+                if($rel_count < $minfreq)
+                    $minfreq = $rel_count;
+                if($rel_count > $maxfreq)
+                    $maxfreq = $rel_count;
+            }
+        }
+        $json .= $jsonexpand;
+        $json .= "]";
+        $json .= ', minfreq: ' . $minfreq;
+        $json .= ', maxfreq: ' . $maxfreq;
+        $json .= "})";
+
+        return $json;
+    }
+
+    /**
      * @return Array label => id
      * @param optional Array id list
      */
