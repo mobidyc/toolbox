@@ -6,6 +6,7 @@
         <header class="section-header">
             <h1 class="section-title">Categories</h1>
         </header>
+
         <div class="row">
             <div class="tagcloud">
             <script type="text/javascript">
@@ -38,7 +39,7 @@
 
                     //set tag size
                     var minfont = 2;
-                    var maxfont = 8;
+                    var maxfont = 6;
                     var fontunit = 'em';
 
                     var maxfontstep = (maxfont - minfont) / 10;
