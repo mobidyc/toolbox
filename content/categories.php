@@ -37,22 +37,15 @@
                     li.appendTo(".taglist");
 
                     //set tag size
-                    var maxfont = 22;
-                    var minfont = 8;
-                    var fontunit = 'pt';
+                    var minfont = 2;
+                    var maxfont = 8;
+                    var fontunit = 'em';
 
-                    var spread = data.maxfreq - data.minfreq;
-                    if(spread <= 0) spread = 1;
-
-                    var fontspread = maxfont - minfont;
-                    if(fontspread <= 0) fontspread = 1;
-
-                    var fontstep = fontspread / spread;
-                    var freq = val.freq ;
+                    var maxfontstep = (maxfont - minfont) / 10;
 
                     li
                         .children()
-                        .css("fontSize", freq * spread * fontstep + fontunit);
+                        .css("fontSize", minfont + maxfontstep/((data.maxfreq - val.freq + 1) / 10) + fontunit);
                 });
             });
             </script>
