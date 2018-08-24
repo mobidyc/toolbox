@@ -38,8 +38,8 @@
                     li.appendTo(".taglist");
 
                     //set tag size
-                    var minfont = 2;
-                    var maxfont = 6;
+                    var minfont = 0.8;
+                    var maxfont = 2.5
                     var fontunit = 'em';
 
                     var maxfontstep = (maxfont - minfont) / 10;
