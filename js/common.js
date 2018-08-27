@@ -12,15 +12,14 @@ $(document).ready(function(){
     $(add_button).click(function(e){
         e.preventDefault();
 
-        $(wrapper).prepend('<div class="form-group">' +
-            '<label for="example[]" class="col-sm-2 control-label remove_field">' +
-            '<a>Remove</a>' +
-            '</label>' +
-            '<div class="col-sm-10">' +
-            '<textarea name="exampletxt[]" rows="1" class="form-control"></textarea>' +
-            '<textarea name="examplecmd[]" class="form-control"></textarea>' +
+        $(wrapper).prepend('<div class="w3-container w3-card w3-white w3-margin-bottom padding-8">' +
+            '<button class="w3-button w3-green remove_field">Remove this code block</button>' +
+            '<br/>' +
+            '<label for="exampletxt[]">Command to run</label>' +
+            '<textarea name="exampletxt[]" rows="1" class="w3-input w3-border"></textarea>' +
+            '<label for="examplecmd[]">Expected output</label>' +
+            '<textarea name="examplecmd[]" class="w3-input w3-border"></textarea>' +
             '<input type="hidden" name="exampleid[]" value="" />' +
-            '</div>' +
             '</div>'
         );
         autosize($('textarea'));

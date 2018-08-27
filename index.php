@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_cv&stacked=h -->
 <html lang="en">
 <?php require("content/meta.php"); ?>
-<body>
+<body class="w3-light-grey">
 
 <?php
 require_once('Tool.php');
@@ -14,15 +15,26 @@ ksort($all_labels, 4);
 $colors_available = array( "default", "primary", "success", "info", "warning", "facebook", "google", "twitter", "pinterest", "tumblr", "phaedra-default", "phaedra-primary", "phaedra-success", "phaedra-info", "phaedra-warning" );
 ?>
 
-<?php require("content/header.php"); ?>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <!-- The Grid -->
+    <div class="w3-row-padding">
 
-<div class="container well">
+        <div class="w3-third">
+            <div class="w3-white w3-text-grey w3-card-4">
+                <?php include("content/header.php"); ?>
+                <?php include("content/categories.php"); ?>
+                <?php include("content/list.php"); ?>
+            </div>
+        </div>
+        
+        <div class="w3-twothird">
+            <?php include("content/tool.php"); ?>
+        </div>
 
-    <?php require("content/categories.php"); ?>
-    <?php require("content/list.php"); ?>
-    <?php require("content/tool.php"); ?>
-
-</div> <!-- End container -->
-
+    <!-- End Grid -->
+    </div>
+<!-- End Page Container -->
+</div>
 </body>
 </html>
